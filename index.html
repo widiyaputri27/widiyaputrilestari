@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Pribadi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#about" onclick="showSection('about')">About</a></li>
+                <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero-image">
+            <h1>Widiya Putri Lestari</h1>
+            <p>Fotografer| Traveler</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-background">
+            <div class="blur-overlay"></div>
+            <div class="about-content">
+                <div class="profile-pic-container">
+                    <img src="aku5.jpg" alt="Foto Profil" class="profile-pic">
+                </div>
+                <div class="about-text">
+                    <h2>Tentang Saya</h2>
+                    <p>Halo! Saya adalah seorang fotografer yang berdedikasi untuk menangkap momen berharga dan mengabadikannya melalui lensa saya. Di blog ini, saya berbagi beberapa foto tentang alam, Selamat datang, dan semoga Anda menikmati setiap cerita yang ada!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="blog-background">
+            <h2>Blog</h2>
+            <article>
+                <div class="text">
+                    <h3>Fotografi Alam</h3>
+                    <p>Fotografi air terjun adalah perjalanan luar biasa dalam mengungkapkan keindahan alam melalui lensa kamera. Setiap perjalanan untuk memotret air terjun bisa memberi kamu pengalaman dan foto yang penuh cerita. Dengan kombinasi pencahayaan yang baik, teknik eksposur yang tepat, komposisi yang menarik, serta pemahaman terhadap elemen alam sekitar, kamu dapat menangkap kekuatan dan keanggunan air terjun dalam gambar yang tak terlupakan.
+                    </p>
+                </div>
+                <img src="pm1.jpg" alt="Gambar Artikel 1">
+            </article>
+            <article>
+                <img src="sg1.jpg" alt="Gambar Artikel 2">
+                <div class="text">
+                    <h3>Fotografi Alam</h3>
+                    <p>Fotografi laut adalah cara luar biasa untuk menangkap kekuatan dan kedamaian alam yang begitu mencolok. Mulai dari kesan dramatis dari ombak yang bergulung hingga keindahan refleksi matahari terbenam di permukaan laut, ada banyak elemen menarik yang bisa dieksplorasi. Dengan teknik yang tepat dan perhatian terhadap waktu serta komposisi, kamu bisa menghasilkan gambar laut yang luar biasa yang mengungkapkan keindahan tak terhingga yang ditawarkan oleh samudra kita.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="aku1.jpg" alt="Gambar 1">
+            <img src="aku2.jpg" alt="Gambar 2">
+            <img src="aku5.jpg" alt="Gambar 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact">
+            <div class="contact-form">
+                <h2>Hubungi Kami</h2>
+                <form action="" method="post">
+                    <input type="text" name="name" placeholder="Nama Lengkap" required>
+                    <input type="email" name="email" placeholder="Email Anda" required>
+                    <textarea name="message" rows="4" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fungsi untuk menampilkan hanya section yang dipilih
+        function showSection(sectionId) {
+            // Dapatkan semua elemen section
+            const sections = document.querySelectorAll('.section');
+
+            // Sembunyikan semua section
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Tampilkan section yang diinginkan
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

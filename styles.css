@@ -1,0 +1,324 @@
+/* Styling Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5); /* Transparan untuk navbar */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.section {
+    display: none;
+    padding: 50px 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Hero Section */
+.hero-image {
+    width: 100vw;
+    height: 100vh;
+    background: url('g1.jpg') no-repeat center center/cover;
+    position: fixed; /* Menjadikan elemen memenuhi layar tanpa pengaruh elemen lain */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: -1;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay untuk keterbacaan teks */
+    z-index: 1;
+}
+
+.hero-image h1, .hero-image p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+}
+
+.hero-image p {
+    font-size: 1.5em;
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Sesuaikan tinggi untuk scroll */
+}
+
+.gallery img {
+    width: calc(33.333% - 10px); /* Lebar gambar setara 1/3 dari kontainer */
+    height: auto; /* Pastikan tinggi gambar mengikuti proporsi aslinya */
+    border-radius: 8px;
+    object-fit: cover; /* Menjaga aspek rasio gambar agar memenuhi kontainer */
+    max-width: 100%; /* Tidak melebihi lebar kontainer */
+}
+
+/* About Section */
+.about-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('bg.jpg'); /* Jalur ke gambar latar */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1; /* Agar berada di belakang konten */
+}
+
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay untuk kegelapan */
+    backdrop-filter: blur(8px); /* Blur hanya untuk background */
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2; /* Di atas overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Konten diatur dalam kolom untuk posisi tengah */
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    color: #fff;
+    text-align: center; /* Memastikan teks rata tengah */
+}
+
+/* Foto profil */
+.profile-pic-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styling tambahan untuk teks */
+h2 {
+    font-size: 2.5em; /* Ukuran font untuk judul */
+    font-weight: 700; /* Berat font */
+}
+
+p {
+    font-size: 1.2em; /* Ukuran font untuk paragraf */
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Reset margin dan padding untuk latar penuh tanpa tepi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mengatur body dan html agar latar belakang penuh */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Kontak Section */
+.contact {
+    display: flex;
+    justify-content: center; /* Menyusun konten secara horizontal di tengah */
+    align-items: center; /* Menyusun konten secara vertikal di tengah */
+    height: 100vh; /* Mengambil seluruh tinggi layar */
+    text-align: center; /* Memastikan teks berada di tengah */
+    padding: 20px; /* Padding untuk kenyamanan */
+}
+
+.contact-form {
+    max-width: 600px; /* Membatasi lebar form */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Warna latar belakang dengan transparansi */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd; /* Border ringan untuk form */
+    border-radius: 5px; /* Sudut form yang lembut */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Warna hijau tombol */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049; /* Efek hover untuk tombol */
+}
+
+/* Blog Section */
+#blog-section {
+    width: 100vw;
+    min-height: 100vh; /* Minimal penuh viewport */
+    overflow-y: auto; /* Mengaktifkan scroll untuk konten blog */
+    background: #87CEEB; /* Warna biru langit */
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Konten blog */
+.blog-background {
+    width: 100%;
+    max-width: 1200px; /* Batas lebar maksimal konten untuk keindahan */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px; /* Lebih menempel ke header */
+}
+
+/* Gaya untuk heading */
+.blog-background h2 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Gaya untuk setiap artikel */
+article {
+    width: 90%;
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Lebih transparan */
+    border: 2px solid #87CEEB; /* Border biru lembut */
+    border-radius: 15px; /* Membuat sudut lebih membulat */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Lebih menonjol */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Gaya untuk gambar dalam artikel */
+article img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Artikel dengan tata letak berselang-seling gambar dan teks */
+article:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Gaya untuk kontainer teks dalam artikel */
+article .text {
+    width: 50%;
+}
+
+article h3 {
+    margin: 0 0 10px;
+    font-size: 2em;
+    color: #4B0082; /* Warna ungu untuk judul artikel */
+}
+
+article p {
+    line-height: 1.8;
+    font-size: 1.2em;
+    color: #333;
+}
